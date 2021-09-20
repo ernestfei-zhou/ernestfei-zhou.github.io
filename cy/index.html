@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>致我亲爱的艳</title>
+
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('./digital-7_mono.TTF') format("truetype");
+        }
+    </style>
+
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+    <div id="content">
+        <div id="code" style="font-size:12px;font-weight:bold">
+            <span class="comments">/**</span><br/>
+            <span class="space"/><span class="comments">* From - 2021-06-13.</span><br/>
+            <span class="space"/><span class="comments">* To - The future. - 去向未来</span><br/>
+            <span class="space"/><span class="comments">*/</span><br/>
+            Boy's name = <span class="keyword">Mr</span> 飞<br/>
+            Girl's name = <span class="keyword">Mrs</span> 艳<br/>
+            <span class="comments">// Fall in love river. - 坠入了爱河.</span><br/>
+            The boy loves the girl; - 这个男孩非常爱这个女孩.<br/>
+            <span class="comments">// They love each other. - 他们是彼此奔赴的.</span><br/>
+            The girl loves the boy; - 这个女孩也喜欢这个男孩.<br/>
+            <h6><span class="keyword" style="font-size:32px;">亲爱的艳：</span></h6><br/>
+            <span class="comments">在和你坚持牵手的100天，我特此做了一个小网页来记录我们在一起走过的时间</span><br/>
+            <span class="comments">很是幸运能够遇到你，我也希望以后不管如何都能一直牵着你的手陪你走下去。</span><br/>
+            <span class="comments">// Whether it is right now - 无论是现在</span><br/>
+            <span class="comments">// Still in the distant future. - 还是将来</span><br/>
+            The boy has only one dream; - 这个男孩只有一个梦想. <br/>
+            <span class="comments">// The boy wants the girl could well have been happy forever. - 这个男孩希望女孩能永远地幸福下去.</span><br/>
+            <br>
+            <br>
+            I want to say:<br/>
+            Ari-yan Baby, I love you forever; 我永远爱你！<br/>
+        </div>
+        <div id="loveHeart">
+            <canvas id="garden"></canvas>
+            <div id="words">
+                <div id="messages">
+                    亲爱的<span class="keyword">艳</span>，这是我们在一起的美好时光。
+                    <div id="elapseClock"></div>
+                </div>
+                <div id="loveu">
+                    爱艳直到永远。<br/>
+                    <div class="signature"> - 喜欢你的飞</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <a href="#">@ Copyright by 来自一个游戏打得很差的程序猿-飞</a><br/>
+    </div>
+
+</div>
+
+<style>
+
+    body {
+        background: #fff;
+        margin: 0;
+    }
+
+    canvas {
+        cursor: crosshair;
+        display: block;
+    }
+
+</style>
+
+<script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2 ;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+
+
+    var together = new Date("2021/06/13 12:00:00");
+
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 5000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
+
+</body>
+</html>
